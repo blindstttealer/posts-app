@@ -1,20 +1,24 @@
-'use client'
-
-
-import {useStoreon} from "storeon/react";
-import {useRouter} from "next/navigation";
+"use client";
+import { useStoreon } from "storeon/react";
+import { useRouter } from "next/navigation";
+import styles from "./styles/LoginButton.module.scss";
+import { AuthEvents, AuthState } from "@/app/store/authStore";
 
 export const LoginButton = () => {
-    const {token} = useStoreon<{token: string}>('token')
-    const router = useRouter()
+  const { token, dispatch } = useStoreon<AuthState, AuthEvents>("token");
+  const router = useRouter();
 
-
-
-    return <div>
-        {token ? `User token: ${token}` : <button
-        onClick={()=> {
-            router.push('/login')
+  return (
+    <div className={styles.wrapper}>
+      <button
+        className={styles.login}
+        onClick={() => {
+          token && dispatch("auth/signout");
+          router.push("/login");
         }}
-        >login</button> }
+      >
+        {token ? `User token: ${token}, logout` : "login"}
+      </button>
     </div>
-}
+  );
+};

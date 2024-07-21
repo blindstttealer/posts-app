@@ -1,0 +1,53 @@
+$post-title-color: #103cd3;
+$post-body-color: #37779f;
+$comment-title-color: #175aa1;
+$comment-body-color: #666;
+$comment-border-color: #ddd;
+
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-title {
+  font-size: 28px;
+  color: $post-title-color;
+  margin-bottom: 10px;
+}
+
+.post-body {
+  font-size: 18px;
+  color: $post-body-color;
+  margin-bottom: 20px;
+}
+
+.comments-title {
+  font-size: 24px;
+  color: $comment-title-color;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.comment-list {
+  list-style-type: none;
+
+  .comment-item {
+    border-bottom: 1px solid $comment-border-color;
+    padding: 10px 0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .comment-author {
+      font-weight: bold;
+      color: $comment-title-color;
+      margin-right: 5px;
+    }
+
+    .comment-body {
+      color: $comment-body-color;
+    }
+  }
+}

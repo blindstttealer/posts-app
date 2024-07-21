@@ -1,0 +1,47 @@
+$form-color: #849ebd;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+
+  .title {
+    font-size: 24px;
+    color: $form-color;
+    margin-bottom: 18px;
+  }
+
+  input {
+    color: $form-color;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+
+    &::placeholder {
+      color: lighten($form-color, 20%);
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
+}

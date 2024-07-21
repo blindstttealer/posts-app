@@ -1,4 +1,32 @@
+$primary-color: #6200ea;
+$secondary-color: #03dac5;
+$text-color: #ffffff;
+$hover-bg-color: #3700b3;
+
+.wrapper {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background-color: #f8f8f8;
+  height: 70px;
+  padding-inline: 20px;
+}
+
 .login {
-  background: green;
-  color: red;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: $text-color;
+  background-color: $primary-color;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $hover-bg-color;
+  }
+
+  &:active {
+    background-color: darken($hover-bg-color, 10%);
+  }
 }
